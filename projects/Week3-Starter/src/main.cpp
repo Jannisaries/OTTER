@@ -223,10 +223,11 @@ int main() {
 	shader->LoadShaderPartFromFile("shaders/frag_shader.glsl", ShaderPartType::Fragment);
 	shader->Link();
 
-	Shader* shader2 = new Shader();
-	shader2->LoadShaderPartFromFile("shaders/vertex_shader.glsl", ShaderPartType::Vertex);
-	shader2->LoadShaderPartFromFile("shaders/Frag_Shader2.glsl", ShaderPartType::Fragment);
-	shader2->Link();
+	//2nd SHADER
+	//Shader* shader2 = new Shader();
+	//shader2->LoadShaderPartFromFile("shaders/vertex_shader.glsl", ShaderPartType::Vertex);
+	//shader2->LoadShaderPartFromFile("shaders/Frag_Shader2.glsl", ShaderPartType::Fragment);
+	//shader2->Link();
 
 	// GL states
 	glEnable(GL_DEPTH_TEST);
@@ -247,7 +248,9 @@ int main() {
 		glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		shader2->Bind();
+		//PIECE OF 2ND SHADER
+		//shader2->Bind();
+		shader->Bind();
 
 		vao->Bind();
 		glDrawArrays(GL_TRIANGLES, 0, 3);
